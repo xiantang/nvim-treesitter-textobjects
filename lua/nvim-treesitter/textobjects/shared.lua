@@ -75,7 +75,7 @@ function M.make_query_strings_table(query_strings)
 end
 
 -- Get query strings from regex
-function M.get_strings_from_regex(query_strings_regex, query_group, lang)
+function M.get_query_strings_from_regex'(query_strings_regex, query_group, lang)
   query_strings_regex = M.make_query_strings_table(query_strings_regex)
   query_group = query_group or "textobjects"
   lang = lang or parsers.get_buf_lang(0)
