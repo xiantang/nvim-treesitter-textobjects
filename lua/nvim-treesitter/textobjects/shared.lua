@@ -1,7 +1,7 @@
 local api = vim.api
 
 local parsers = require "nvim-treesitter.parsers"
-local queries = require "nvim-treesitter.query"
+local queries = require "vim.treesitter.query"
 local ts_utils = require "nvim-treesitter.ts_utils"
 
 local M = {}
@@ -75,7 +75,12 @@ function M.make_query_strings_table(query_strings)
 end
 
 -- Get query strings from regex
-function M.get_query_strings_from_regex(query_strings_regex, query_group, lang)
+function M.
+  
+  
+  
+  
+  _strings_from_regex(query_strings_regex, query_group, lang)
   query_strings_regex = M.make_query_strings_table(query_strings_regex)
   query_group = query_group or "textobjects"
   lang = lang or parsers.get_buf_lang(0)
@@ -95,7 +100,7 @@ end
 function M.available_textobjects(lang, query_group)
   lang = lang or parsers.get_buf_lang()
   query_group = query_group or "textobjects"
-  local parsed_queries = queries.get_query(lang, query_group)
+  local parsed_queries = queries.get(lang, query_group)
   if not parsed_queries then
     return {}
   end
